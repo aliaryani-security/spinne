@@ -8,4 +8,7 @@ urls_list.append(url)
 
 page = requests.get (url)
 is_followed[url] = True
-print (is_followed)
+
+for line in page.text.split('\n'):
+    if "http" in line:
+        print (line)
